@@ -21,10 +21,12 @@ const DashBoardTop = () => {
   return (
     <Box
       sx={{ 
-        height: "2o0px",
+        height: "20%",
         // marginTop: 1,
         // marginLeft: 3,
-       display:"flex"
+       display:"flex",
+       backgroundColor:"lightblue"
+
       }}
     >
       <DashboardCard cardDetails={cardDetails}/>

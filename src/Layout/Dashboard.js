@@ -5,26 +5,28 @@ import DashboardMap from '../components/Dashboard/DashboardMap'
 import SelectedRecordMap from '../components/Dashboard/SelectedRecordMap'
 import Records from '../components/Dashboard/Records'
 import DashboardTop from '../components/Dashboard/DashBoardTop'
+import SelectRecordGraph from '../components/Dashboard/SelectRecordGraph'
 
 
 const Dashboard = () => {
-  
+  const styleSx={
+    // backgroundColor:"red",
+    width:"100%",
+    // flex:1,
+    height:"90%",
+    borderBottomRightRadius:"15px",
+   }
+
   return (
  <Box
- sx={{
-  // backgroundColor:"red",
-  // height:"100vh",
-  width:"100%",
-  // flex:1,
-  height:"90%",
-  borderBottomRightRadius:"15px"
- }}
+ sx={styleSx}
  >
   
 <DashboardTop/>
-<Typography sx={{ fontSize: "22px", fontWeight: "bold" ,marginLeft:2 }}>Track on map</Typography>
 <DashboardMap/>
-<SelectedRecordMap/>
+<Typography>Selected Records</Typography>
+
+<SelectRecordGraph/>
 <Records/>
 
  </Box>

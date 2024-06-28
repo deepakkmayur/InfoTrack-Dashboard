@@ -7,9 +7,9 @@ import AssessmentIcon from '@mui/icons-material/Assessment';
 
 const Aside = () => {
   const contentArray = [
-    { icon: <DashboardIcon sx={{ color: 'red',fontSize: 40 }} />, title: "Dashboard" },
-    { icon: <LocationOnIcon sx={{ color: 'red',fontSize: 40 }} />, title: "Track on map" },
-    { icon: <AssessmentIcon sx={{ color: 'red',fontSize: 40 }} />, title: "Report" }
+    {id:1, icon: <DashboardIcon sx={{ color: '#000000',fontSize: 40 }} />, title: "Dashboard" },
+    { id:2,icon: <LocationOnIcon sx={{ color: '#000000',fontSize: 40 }} />, title: "Track on map" },
+    {id:3, icon: <AssessmentIcon sx={{ color: '#000000',fontSize: 40 }} />, title: "Report" }
   ]
 
 
@@ -17,9 +17,7 @@ const Aside = () => {
     <Box
       sx={{
         width: '360px',
-        // height: '100vh',
-        // height: "808px",
-        // boxShadow:5,
+        height: "100%",
         boxShadow:" 0 0 20px rgba(0, 0, 0, 0.2)",
         display: 'flex',
         flexDirection: 'column',
@@ -36,7 +34,7 @@ const Aside = () => {
       </Typography>
 
       {contentArray.map((ele)=>(
-        <AsideCard icon={ele.icon} title={ele.title}/>
+        <AsideCard key={ele.id} icon={ele.icon} title={ele.title}/>
       ))}
     
     </Box>

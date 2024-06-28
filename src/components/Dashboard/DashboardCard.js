@@ -29,7 +29,7 @@ const DashboardCard = ({cardDetails}) => {
               lg: '20%',  
               xl: '18%', 
             },
-            // height: '50%',
+            height: '100%',
             boxShadow: "0 0 20px rgba(0, 0, 0, 0.2)",
             borderRadius: "20px",
             margin: "10px",
@@ -39,6 +39,7 @@ const DashboardCard = ({cardDetails}) => {
           <Box
             sx={{
               width: "35%",
+              height:"100%",
               display: "flex",
               flexDirection: "column",
               alignItems: 'center',

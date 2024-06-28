@@ -3,10 +3,13 @@
 import React from 'react';
 import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
 import env from "../../config"
+import { Box ,Typography} from '@mui/material';
+
 
 const containerStyle = {
-  width: '100%',
-  height: '400px',
+  width: '97%',
+  height: '80%',
+  borderRadius: '15px',
 };
 
 const center = {
@@ -25,6 +28,16 @@ const svgMarker = {
 
 const GoogleMapComponent = () => {
   return (
+   <Box
+   sx={{
+    borderRadius:"20px",
+    width:"100%",
+    height:"100%",
+    // backgroundColor:"white"
+   }}
+   >
+<Typography sx={{ fontSize: "22px", fontWeight: "bold" ,marginLeft:2 }}>Track on map</Typography>
+
     <LoadScript googleMapsApiKey={env.GOOGLE_MAPS_API_KEY}>
       <GoogleMap
         mapContainerStyle={containerStyle}
@@ -43,6 +56,7 @@ const GoogleMapComponent = () => {
         />
       </GoogleMap>
     </LoadScript>
+    </Box>
   );
 };
 
