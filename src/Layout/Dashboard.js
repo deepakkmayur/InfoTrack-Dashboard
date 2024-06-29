@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Box ,Typography} from '@mui/material'
 import DashboardCard from '../components/Dashboard/DashboardCard'
 import DashboardMap from '../components/Dashboard/DashboardMap'
@@ -16,6 +16,10 @@ const Dashboard = () => {
     height:"90%",
     borderBottomRightRadius:"15px",
    }
+   const [selectedRowData,setSelectedRowData]=useState([])
+   const handleRowSelect = (rowData) => {
+    setSelectedRowData(rowData);
+  };
 
   return (
  <Box
@@ -24,10 +28,9 @@ const Dashboard = () => {
   
 <DashboardTop/>
 <DashboardMap/>
-<Typography>Selected Records</Typography>
-
-<SelectRecordGraph/>
-<Records/>
+<Typography sx={{ fontWeight: 'bold', fontSize: '22px', marginLeft:5 }} >Selected Records</Typography>
+<SelectRecordGraph selectedRowData={selectedRowData}/>
+<Records onSelect={handleRowSelect} />
 
  </Box>
   )

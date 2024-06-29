@@ -25,7 +25,7 @@ const DashBoardTop = () => {
         // marginTop: 1,
         // marginLeft: 3,
        display:"flex",
-       backgroundColor:"lightblue"
+      //  backgroundColor:"lightblue"
 
       }}
     >

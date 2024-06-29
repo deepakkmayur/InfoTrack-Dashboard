@@ -17,7 +17,7 @@ const MainContent = () => {
     }}
     >
     <Header/>
-    <Typography sx={{ fontSize: "22px", fontWeight: "bold",marginTop:1  ,marginLeft:2 }}>Dashboard</Typography>
+    <Typography sx={{ fontSize: "22px", fontWeight: "bold",marginTop:1  ,marginLeft:5 }}>Dashboard</Typography>
     <Dashboard/>
     </Box>
   )

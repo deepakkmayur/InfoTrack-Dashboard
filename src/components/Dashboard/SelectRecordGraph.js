@@ -3,26 +3,24 @@ import React from 'react'
 import SelectedRecord from './SelectedRecord'
 import Graph from './Graph'
 
-import { Container } from '@mui/material';
 
-const SelectRecordGraph = () => {
+const SelectRecordGraph = ({selectedRowData}) => {
 
   
   return (
    <Box
    sx={{
       height:"20%",
-       backgroundColor:"lightseagreen",
+      //  backgroundColor:"lightseagreen",
        display:"flex"
 
    }}
    >
-   <SelectedRecord/>
+   <SelectedRecord selectedRowData={selectedRowData}/>
       <Box
       sx={{
         width:"80%",
         height:"100%",
-        // overflow:"inherit"
       }}>
       <Graph />
 

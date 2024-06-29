@@ -7,7 +7,7 @@ const DashboardMap = () => {
   return (
    < Box
    sx={{
-backgroundColor:"lightcoral",
+// backgroundColor:"lightcoral",
 // height:"25%",
 // paddingLeft:5
         height: '30%', // Adjust height as needed

@@ -6,6 +6,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import { useSelector } from 'react-redux';
 
 function createData(id, name, calories, fat, carbs, protein) {
   return { id, name, calories, fat, carbs, protein };
@@ -19,13 +20,24 @@ const rows = [
   createData(5, 'Gingerbread', 356, 16.0, 49),
 ];
 
-export default function SelectedRecord() {
+export default function SelectedRecord({selectedRowData}) {
+  const [rowData,setRowData]=React.useState([])
+//  const data=JSON.parse(localStorage.getItem("selectedRows"))
+//  console.log(data,"selected TABLE DATA");
+  // const selectData=useSelector((state)=>state.data.selectedData)
+//  React.useEffect(()=>{
+//   setRowData(selectData)
+//  },[])
+
+
+ console.log(selectedRowData,"selectedRowData row data");
+
   return (
     <TableContainer 
       component={Paper}
       sx={{
         width: '100%',
-        maxHeight: 250, // Adjust the height to show only 3 rows
+        maxHeight: 250, // Adjusting height to show only 3 rows
         overflow: 'auto',
       }}
     >
@@ -38,23 +50,23 @@ export default function SelectedRecord() {
         <TableHead>
           <TableRow>
             <TableCell>S.No</TableCell>
-            <TableCell>Header 1</TableCell>
-            <TableCell>Header 2</TableCell>
-            <TableCell>Header 3</TableCell>
-            <TableCell>Header 4</TableCell>
+            <TableCell>Category</TableCell>
+            <TableCell>Price</TableCell>
+            <TableCell>Rating</TableCell>
+            <TableCell>Count</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map((row) => (
+          {selectedRowData.map((row,index) => (
             <TableRow
               key={row.id}
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >
-              <TableCell align="left">{row.id}</TableCell>
-              <TableCell component="th" scope="row">{row.name}</TableCell>
-              <TableCell align="left">{row.fat}</TableCell>
-              <TableCell>{row.carbs}</TableCell>
-              <TableCell>{row.protein}</TableCell>
+              <TableCell align="left">{index+1}</TableCell>
+              <TableCell component="th" scope="row">{row?.category}</TableCell>
+              <TableCell align="left">{row?.price}</TableCell>
+              <TableCell>{row?.rating?.rate}</TableCell>
+              <TableCell>{row?.rating?.count}</TableCell>
             </TableRow>
           ))}
         </TableBody>

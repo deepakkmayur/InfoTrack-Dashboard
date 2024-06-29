@@ -1,14 +1,14 @@
-import { FETCH_DATA_REQUEST,FETCH_DATA_SUCCESS,FETCH_DATA_FAILURE } from "../constants";
+import { FETCH_DATA_REQUEST,FETCH_DATA_SUCCESS,FETCH_DATA_FAILURE,DELETE_ROW,SELECT_ROW } from "../constants";
 
 const initialState = {
   isLoading:false,
   error:null,
   data: [],
-  selectedData: []
+  selectedData:JSON.stringify(localStorage.getItem("selectedRows")) || [],
 };
 
 export const dataReducer = (state = initialState, action) => {
-  console.log(action.payload,"reducer data");
+  console.log(action,"reducer data");
   switch (action.type) {
     case FETCH_DATA_REQUEST:
       return {
@@ -29,6 +29,23 @@ export const dataReducer = (state = initialState, action) => {
         isLoading:false,
         error:action.payload
       };
+      
+      case DELETE_ROW:
+        return{
+          ...state,data:state?.data.filter((item)=>{
+          //  const fun=(item)=>{
+          //   return ...state,
+          //  }
+          //  selectedData:fun(item)
+            return item.id!==action.payload
+          })
+        }
+        
+        // case SELECT_ROW:
+        //   return{
+        //     ...state,selectedData:action.payload
+        //   }
+
     default:
       return state;
   }

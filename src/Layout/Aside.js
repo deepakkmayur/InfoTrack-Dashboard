@@ -7,9 +7,9 @@ import AssessmentIcon from '@mui/icons-material/Assessment';
 
 const Aside = () => {
   const contentArray = [
-    {id:1, icon: <DashboardIcon sx={{ color: '#000000',fontSize: 40 }} />, title: "Dashboard" },
-    { id:2,icon: <LocationOnIcon sx={{ color: '#000000',fontSize: 40 }} />, title: "Track on map" },
-    {id:3, icon: <AssessmentIcon sx={{ color: '#000000',fontSize: 40 }} />, title: "Report" }
+    {id:1, icon: <DashboardIcon sx={{ color:"#ffffff",background: 'rgb(223,14,54)',background: 'linear-gradient(90deg, rgba(223,14,54,1) 0%, rgba(50,74,204,0.8802967231814601) 57%, rgba(240,60,15,1) 100%)',fontSize: 40 }} />, title: "Dashboard" },
+    { id:2,icon: <LocationOnIcon sx={{ color:"rgb(223,14,54)", background: '#e8e8e8',fontSize: 40 }} />, title: "Track on map" },
+    {id:3, icon: <AssessmentIcon sx={{  color:"rgb(223,14,54)", background: '#e8e8e8',fontSize: 40 }} />, title: "Report" }
   ]
 
 
@@ -29,8 +29,8 @@ const Aside = () => {
       }}
     >
       <Typography sx={{ fontSize: '30px', marginBottom: 12}}>
-        <span style={{ color: 'red' }}>Info</span>
-        <span style={{ color: 'blue' }}>Track</span>
+        <span style={{ color: '#D90B0B' }}>Info</span>
+        <span style={{ color: '#053F9D' }}>Track</span>
       </Typography>
 
       {contentArray.map((ele)=>(

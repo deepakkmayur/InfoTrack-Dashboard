@@ -36,7 +36,7 @@ const GoogleMapComponent = () => {
     // backgroundColor:"white"
    }}
    >
-<Typography sx={{ fontSize: "22px", fontWeight: "bold" ,marginLeft:2 }}>Track on map</Typography>
+<Typography sx={{ fontSize: "22px", fontWeight: "bold" ,marginLeft:0 }}>Track on map</Typography>
 
     <LoadScript googleMapsApiKey={env.GOOGLE_MAPS_API_KEY}>
       <GoogleMap
