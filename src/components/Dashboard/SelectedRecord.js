@@ -39,6 +39,7 @@ export default function SelectedRecord({selectedRowData}) {
         width: '100%',
         maxHeight: 250, // Adjusting height to show only 3 rows
         overflow: 'auto',
+        marginLeft:5
       }}
     >
       <Table 

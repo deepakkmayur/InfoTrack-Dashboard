@@ -25,21 +25,15 @@ import { fetchData, selectRowData, deleteRowData } from '../../redux/actions/dat
 
 
 export default function DataTable({ onSelect }) {
-  //  const rowData=JSON.parse(localStorage.getItem("selectedRows"))
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(3);
   const [searchQuery, setSearchQuery] = useState('');
-  // const [rowData, setRowData] = useState([])
   const [tableData, setTableData] = useState([])
   const dispatch = useDispatch()
 
   const data = useSelector((state) => state)
   
-  // useEffect(() => {
-  //   const data = JSON.parse(localStorage.getItem("selectedRows"))
-  //   setRowData(data)
-  // }, [rowData, dispatch,data])
-
+  
   useEffect(() => {
     dispatch(fetchData())
   }, [dispatch])
@@ -89,7 +83,7 @@ export default function DataTable({ onSelect }) {
 
   return (
     <>
-<Typography sx={{ fontWeight: 'bold', fontSize: '22px', marginLeft:5 }} >Selected Records</Typography>
+<Typography sx={{ fontWeight: 'bold', fontSize: '22px', marginLeft:2 ,position:'relative',top:20}} >Records</Typography>
 
     <Box sx={{ display: 'flex', flexDirection: "column" }}>
       
@@ -140,10 +134,11 @@ export default function DataTable({ onSelect }) {
             </TableRow>
           </TableHead>
           <TableBody>
-            {filteredRows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row) => (
+            {filteredRows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row,index) => (
 
               <TableRow key={row?.id} sx={{ '&:last-child td, &:last-child th': { border: 0 } }} >
-                <TableCell >{row?.id}</TableCell>
+                {/* <TableCell >{row?.index+1}</TableCell> */}
+                <TableCell>{page * rowsPerPage + index + 1}</TableCell>
                 <TableCell component="th" scope="row">{row?.category}</TableCell>
                 <TableCell>{row?.title}</TableCell>
                 <TableCell>{row?.price}</TableCell>

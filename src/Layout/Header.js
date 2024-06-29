@@ -8,15 +8,9 @@ import NotificationsIcon from '@mui/icons-material/Notifications';
 const Header = () => {
   return (
     <Box
-      // sx={{
-        // backgroundColor: "red",
-        // width: "20px"
-        // display:"flex"
-      // }}
-
       sx={{
         display: 'flex',
-        height: '5rem',  
+        height: '5rem', 
         borderTopRightRadius:"15px",
         boxShadow:" 0 8px 8px rgba(0, 0, 0, 0.2)",
         justifyContent:"flex-end",

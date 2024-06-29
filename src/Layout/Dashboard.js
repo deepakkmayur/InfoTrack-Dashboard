@@ -10,10 +10,9 @@ import SelectRecordGraph from '../components/Dashboard/SelectRecordGraph'
 
 const Dashboard = () => {
   const styleSx={
-    // backgroundColor:"red",
+    // backgroundColor:"lightblue",
     width:"100%",
-    // flex:1,
-    height:"90%",
+    height:"100%",
     borderBottomRightRadius:"15px",
    }
    const [selectedRowData,setSelectedRowData]=useState([])
@@ -31,7 +30,6 @@ const Dashboard = () => {
 <Typography sx={{ fontWeight: 'bold', fontSize: '22px', marginLeft:5 }} >Selected Records</Typography>
 <SelectRecordGraph selectedRowData={selectedRowData}/>
 <Records onSelect={handleRowSelect} />
-
  </Box>
   )
 }
