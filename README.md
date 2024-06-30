@@ -40,4 +40,6 @@ Follow these instructions to set up and run the project on your local machine.
 1. Clone the repository:
    ```sh
    git clone https://github.com/deepakkmayur/InfoTrack-Dashboard.git
+2. Run `npm install` to install dependencies.
+3. Run `npm start` to start the development server.
   
