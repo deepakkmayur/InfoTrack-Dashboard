@@ -2,25 +2,24 @@ import React from 'react'
 import Aside from './Aside'
 import MainContent from './MainContent'
 import { Box } from '@mui/material';
-import { useSelector } from 'react-redux';
 
 const Layout = () => {
- 
+
   return (
     <Box
       sx={{
         borderRadius: '15px',
-        boxShadow:" 0 0 20px rgba(0, 0, 0, 0.5)",
+        boxShadow: " 0 0 20px rgba(0, 0, 0, 0.5)",
         display: 'flex',
-        height:"100%"
+        // height: "100%",
+        width: '100%', height: '100vh'
       }}
     >
       <Aside />
-      <MainContent/>
+      <MainContent />
     </Box>
   )
 }
 
 export default Layout
-
 

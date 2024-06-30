@@ -1,19 +1,20 @@
 import { Box, Typography } from '@mui/material';
 import React from 'react';
 
-const DashboardCard = ({cardDetails}) => {
- 
+const DashboardCard = ({ cardDetails }) => {
+
   return (
     <Box
       sx={{
         display: 'flex',
         gap: 2,
         justifyContent: 'space-evenly',
-        // backgroundColor:"red",
-        marginBottom:2,
-        padding:"5px 20px 0 20px",
-        height:"70%"
-        
+        // backgroundColor: "red",
+        marginBottom: 2,
+        padding: "5px 20px 0 20px",
+        height: "70%",
+        width: "100%",
+
       }}
     >
       {cardDetails.map((card, index) => (
@@ -23,29 +24,33 @@ const DashboardCard = ({cardDetails}) => {
             display: "flex",
             flexDirection: "row",
             width: {
-              xs: '80%',  
-              sm: '45%',  
-              md: '30%',  
-              lg: '20%',  
-              xl: '18%', 
+              xs: '80%',
+              sm: '45%',
+              md: '30%',
+              lg: '20%',
+              xl: '18%',
             },
-            height: '100%',
+            height: '100px',
             boxShadow: "0 0 20px rgba(0, 0, 0, 0.2)",
             borderRadius: "20px",
             margin: "10px",
             // backgroundColor: 'yellow',
+            zIndex: 1
           }}
         >
           <Box
+
             sx={{
-              width: "35%",
-              height:"100%",
+              width: "100px",
+              height: "100px",
               display: "flex",
               flexDirection: "column",
               alignItems: 'center',
               justifyContent: 'center',
               textAlign: 'center',
               padding: 1,
+              position: 'relative',
+              bottom: 2
             }}
           >
             <img src={card.image} alt="Image" style={{ width: '80%', height: 'auto', borderRadius: '10px', marginTop: '-15px' }} />
@@ -54,19 +59,27 @@ const DashboardCard = ({cardDetails}) => {
           </Box>
 
           <Box
+
             sx={{
               width: "65%",
               display: "flex",
               flexDirection: "column",
-              alignItems: 'center',
-              justifyContent: 'center',
+              alignItems: "center",
+              justifyContent: "center",
               paddingLeft: 1,
-              textAlign: 'center',
+              textAlign: "center",
             }}
           >
-            <Typography sx={{ fontSize: "100%", color:`${card.color}`, fontWeight: "bold" }}>{card.movement}</Typography>
-            <Typography sx={{ fontSize: "120%", fontWeight: "bold" }}>{card.number}</Typography>
-            <Typography sx={{ fontSize: "60%", fontWeight: "bold" }}>{card.viewMap}</Typography>
+
+            <Typography sx={{ fontSize: "100%", color: `${card.color}`, fontWeight: "bold", marginBottom: "3px", marginLeft: "auto", marginRight: "10px" }}>
+              {card.movement}
+            </Typography>
+            <Typography sx={{ fontSize: "120%", fontWeight: "bold", marginBottom: "3px", marginLeft: "auto", marginRight: "10px" }}>
+              {card.number}
+            </Typography>
+            <Typography sx={{ fontSize: "60%", fontWeight: "bold", marginLeft: "auto", marginRight: "10px" }}>
+              {card.viewMap}
+            </Typography>
           </Box>
         </Box>
       ))}

@@ -2,7 +2,7 @@ import React from 'react'
 import { Box } from '@mui/material';
 import Layout from './Layout/Layout'
 import "./App.css"
-import {store} from "./redux/store"
+import { store } from "./redux/store"
 import { Provider } from 'react-redux';
 
 

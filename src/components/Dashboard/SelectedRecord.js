@@ -8,43 +8,37 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { useSelector } from 'react-redux';
 
-function createData(id, name, calories, fat, carbs, protein) {
-  return { id, name, calories, fat, carbs, protein };
-}
 
-const rows = [
-  createData(1, 'Frozen yoghurt', 159, 6.0, 24),
-  createData(2, 'Ice cream sandwich', 237, 9.0, 37),
-  createData(3, 'Eclair', 262, 16.0, 24),
-  createData(4, 'Cupcake', 305, 3.7, 67),
-  createData(5, 'Gingerbread', 356, 16.0, 49),
-];
 
-export default function SelectedRecord({selectedRowData}) {
-  const [rowData,setRowData]=React.useState([])
-//  const data=JSON.parse(localStorage.getItem("selectedRows"))
-//  console.log(data,"selected TABLE DATA");
+export default function SelectedRecord({ selectedRowData }) {
+  const [rowData, setRowData] = React.useState([])
+  //  const data=JSON.parse(localStorage.getItem("selectedRows"))
+  //  console.log(data,"selected TABLE DATA");
   // const selectData=useSelector((state)=>state.data.selectedData)
-//  React.useEffect(()=>{
-//   setRowData(selectData)
-//  },[])
+  //  React.useEffect(()=>{
+  //   setRowData(selectData)
+  //  },[])
 
+  React.useEffect(()=>{
+    setRowData(selectedRowData)
+  },[selectedRowData])
 
- console.log(selectedRowData,"selectedRowData row data");
+  console.log(rowData, "selectedRowData row data ......");
+
 
   return (
-    <TableContainer 
+    <TableContainer
       component={Paper}
       sx={{
         width: '100%',
-        maxHeight: 250, // Adjusting height to show only 3 rows
+        maxHeight: "100%", 
         overflow: 'auto',
-        marginLeft:5
+        marginLeft: 5
       }}
     >
-      <Table 
-        sx={{ minWidth: '100%', boxShadow: '20px' }} 
-        aria-label="simple table" 
+      <Table
+        sx={{ minWidth: '100%', boxShadow: '20px' }}
+        aria-label="simple table"
         size="small"
         stickyHeader // To make the header sticky while scrolling
       >
@@ -58,19 +52,27 @@ export default function SelectedRecord({selectedRowData}) {
           </TableRow>
         </TableHead>
         <TableBody>
-          {selectedRowData.map((row,index) => (
-            <TableRow
-              key={row.id}
-              sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-            >
-              <TableCell align="left">{index+1}</TableCell>
-              <TableCell component="th" scope="row">{row?.category}</TableCell>
-              <TableCell align="left">{row?.price}</TableCell>
-              <TableCell>{row?.rating?.rate}</TableCell>
-              <TableCell>{row?.rating?.count}</TableCell>
-            </TableRow>
-          ))}
-        </TableBody>
+  {rowData.length==0? (
+    <TableRow>
+      <TableCell colSpan={5} align="center">
+        No items selected...
+      </TableCell>  
+    </TableRow>
+  ) : (
+    rowData.map((row, index) => (
+      <TableRow
+        key={row.id}
+        sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+      >
+        <TableCell align="left">{index + 1}</TableCell>
+        <TableCell component="th" scope="row">{row?.category}</TableCell>
+        <TableCell align="left">{row?.price}</TableCell>
+        <TableCell>{row?.rating?.rate}</TableCell>
+        <TableCell>{row?.rating?.count}</TableCell>
+      </TableRow>
+    ))
+  )}
+</TableBody>
       </Table>
     </TableContainer>
   );

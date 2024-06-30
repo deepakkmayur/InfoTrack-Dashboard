@@ -5,22 +5,19 @@ import GoogleMap from "./GoogleMap"
 
 const DashboardMap = () => {
   return (
-   < Box
-   sx={{
-// backgroundColor:"lightcoral",
-// height:"25%",
-// paddingLeft:5
-        height: '30%', // Adjust height as needed
-        width: '100%', // Adjust width as needed
+    < Box
+      sx={{
+        // backgroundColor:"lightcoral",
+        // height:"25%",
+        // paddingLeft:5
+        height: '35%',
+        width: '100%',
         paddingLeft: 5,
-        // overflow: 'hidden'
+      }}
+    >
+      <GoogleMap />
 
-
-   }}
-   >
-   <GoogleMap/>
-
-   </Box>
+    </Box>
   )
 }
 
