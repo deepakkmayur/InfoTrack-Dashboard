@@ -6,7 +6,7 @@ This is a Dashboard application built using React.js and Material UI. The dashbo
 
 - [Features](#features)
 - [Getting Started](#getting-started)
-- [Create config.js file](#create-config.js-file) 
+- [Create config file](#create-config-file) 
 - [Installation](#installation)
 - [Usage](#usage)
 
@@ -31,14 +31,13 @@ Follow these instructions to set up and run the project on your local machine.
    ```sh
    const env={
    GOOGLE_MAPS_API_KEY:"YOUR_GOOGLE_MAPS_API_KEY",
-   API_URL:"URL to fetch fakestoreapi"
-}
-export default env
+   API_URL:"URL to fetch fakestoreapi"}
+   export default env
 
 
 ### Installation
 
 1. Clone the repository:
    ```sh
-   git clone https://github.com/your-username/dashboard-app.git
-   cd dashboard-app
+   git clone https://github.com/deepakkmayur/InfoTrack-Dashboard.git
+  
