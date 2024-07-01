@@ -23,6 +23,8 @@ const DashBoardTop = () => {
       sx={{ 
         width:"100%",
         display:"flex",
+        paddingLeft: 2,
+        paddingRight: 2,
         // height: "180px",
         // marginTop: 1,
         // marginLeft: 3,
