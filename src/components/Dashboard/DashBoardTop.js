@@ -22,6 +22,7 @@ const DashBoardTop = () => {
       sx={{
         width: '100%',
         paddingRight: 1,
+        // backgroundColor:"lightcyan"
       }}
     >
       <DashboardCard cardDetails={cardDetails} />

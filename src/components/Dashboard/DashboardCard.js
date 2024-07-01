@@ -43,7 +43,7 @@ const DashboardCard = ({ cardDetails }) => {
           <Box
 
             sx={{
-              // width: "100px",
+              // backgroundColor:"lightgray",
               width: "80%",
               height: "100px",
               display: "flex",
@@ -53,7 +53,9 @@ const DashboardCard = ({ cardDetails }) => {
               textAlign: 'center',
               padding: 1,
               position: 'relative',
-              bottom: 2
+              bottom: 2,
+              right:2
+              // marginRight:"auto"
             }}
           >
             {/* <img src={card.image} alt="Image" style={{ width:{sm:"30px",md:'50px',lg:"70px",xl:"50px"}, borderRadius: '10px', marginTop: '-15px' }} /> */}
@@ -61,6 +63,7 @@ const DashboardCard = ({ cardDetails }) => {
               src={card.image}
               alt="Image..."
               style={{
+                marginRight:"15%",
                 width: '50px',
                 borderRadius: '10px',
                 marginTop: '-15px',
@@ -75,8 +78,8 @@ const DashboardCard = ({ cardDetails }) => {
                 },
               }}
             />
-            <Typography sx={{ fontSize: "17px", color: `${card.color}`, fontWeight: "bold" }}>{card.percentage}%</Typography>
-            <Typography sx={{ fontSize: "60%", fontWeight: "bold" }}>{card.view}</Typography>
+            <Typography sx={{ fontSize: "17px", color: `${card.color}`, fontWeight: "bold",marginRight:"15%", }}>{card.percentage}%</Typography>
+            <Typography sx={{ fontSize: "60%", fontWeight: "bold",marginRight:"15%", }}>{card.view}</Typography>
           </Box>
 
           <Box

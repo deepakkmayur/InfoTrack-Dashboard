@@ -13,7 +13,6 @@ const Dashboard = () => {
     width: "100%",
     height: "100%",
     borderBottomRightRadius: "15px",
-    // overflow:"auto",
   }
   const [selectedRowData, setSelectedRowData] = useState([])
   const handleRowSelect = (rowData) => {
