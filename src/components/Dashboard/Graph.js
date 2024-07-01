@@ -31,11 +31,11 @@ const Graph = () => {
     },
     xaxis: {
       categories: [
+        ['Electronics'],
+        ['Jewelery'],
+        ["Cloths (M)"],
         ['Total Avg'],
         ["Cloths (F)"],
-        ['Jewelery'],
-        ['Electronics'],
-        ["Cloths (M)"],
       ],
       labels: {
         style: {
@@ -48,14 +48,13 @@ const Graph = () => {
 
   useEffect(() => {
     if (data) {
-      const categoryStats = {
-        totalCount: 0,
-        totalSum: 0,
-      };
-
+      const categoryStats = {};
+      let totalCount=0
+      let totalSum=0
       data.forEach((item) => {
-        categoryStats.totalCount++;
-        categoryStats.totalSum += item.price;
+        console.log(data);
+        totalCount++;
+        totalSum += item.price;
 
         if (!categoryStats[item.category]) {
           categoryStats[item.category] = { total: 0, count: 0 };
@@ -63,17 +62,23 @@ const Graph = () => {
         categoryStats[item.category].total += item.price;
         categoryStats[item.category].count += 1;
       });
-
+  //  console.log(totalCount,"totalCount--------------------------------");
+  //  console.log(totalSum,"totalSum--------------------------------");
       const categoryAverages = {};
       for (const category in categoryStats) {
         const { total, count } = categoryStats[category];
-        categoryAverages[category] = total / count;
+        let itemAvg=(total / count).toFixed(2)
+        // console.log(itemAvg,"-----------item avg");
+        categoryAverages[category] = itemAvg
       }
 
-      let totalAvg = categoryStats.totalSum / categoryStats.totalCount;
-      categoryAverages.totalAvg = totalAvg;
-
-      const newSeries = [{ data: Object.values(categoryAverages).slice(2) }];
+      let totalAvg = totalSum / totalCount;
+      let totalAverage=totalAvg.toFixed(2)
+      // console.log(totalAvg.toFixed(2),"////////totalAvg////");
+      categoryAverages.totalAvg = totalAverage
+        // console.log(categoryAverages,"////////categoryAverages////");
+     
+      const newSeries = [{ data: Object.values(categoryAverages) }];
 
       setSeries(newSeries);
     }

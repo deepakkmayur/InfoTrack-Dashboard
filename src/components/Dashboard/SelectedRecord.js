@@ -11,7 +11,7 @@ import { useSelector } from 'react-redux';
 
 
 export default function SelectedRecord({ selectedRowData }) {
-  const [rowData, setRowData] = React.useState([])
+  const [rowData, setRowData] = React.useState([{category:"",description:"",id:"",price:"",rating:""}])
   //  const data=JSON.parse(localStorage.getItem("selectedRows"))
   //  console.log(data,"selected TABLE DATA");
   // const selectData=useSelector((state)=>state.data.selectedData)
@@ -24,7 +24,7 @@ export default function SelectedRecord({ selectedRowData }) {
   },[selectedRowData])
 
   console.log(rowData, "selectedRowData row data ......");
-
+  console.log(rowData.length,"----------rowData.length---------------------");
 
   return (
     <TableContainer
@@ -52,7 +52,7 @@ export default function SelectedRecord({ selectedRowData }) {
           </TableRow>
         </TableHead>
         <TableBody>
-  {rowData.length==0? (
+  {rowData.length===0? (
     <TableRow>
       <TableCell colSpan={5} align="center">
         No items selected...
