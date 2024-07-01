@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { GoogleMap, LoadScript, useJsApiLoader, MarkerF, Autocomplete } from '@react-google-maps/api';
 import { Box, Typography } from '@mui/material';
-import env from "../../config";
+// import env from "../../config";
 
 const containerStyle = {
   width: '100%',
@@ -36,7 +36,7 @@ const svgMarker = {
 const GoogleMapComponent = () => {
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
-    googleMapsApiKey: env.GOOGLE_MAPS_API_KEY
+    googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY
   });
 
   const [map, setMap] = useState(null);
@@ -63,7 +63,7 @@ const GoogleMapComponent = () => {
     <Box sx={{ borderRadius: "20px", width: "100%", height: "100%", position: "relative" }}>
       <Typography sx={{ fontSize: "22px", fontWeight: "bold", marginLeft: 0 }}>Track on map</Typography>
       <LoadScript
-        googleMapsApiKey={env.GOOGLE_MAPS_API_KEY}
+        googleMapsApiKey={ process.env.REACT_APP_GOOGLE_MAPS_API_KEY}
         libraries={["places"]}
       >
         {isLoaded && (
