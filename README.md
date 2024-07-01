@@ -1,5 +1,5 @@
 # Dashboard Application
-# Vercel Link : [https://password-generator-react-nine-livid.vercel.app/](https://mui-dashboard-nu.vercel.app/)
+# Vercel Link :https://info-track-dashboard.vercel.app/
 This is a Dashboard application built using React.js and Material UI. The dashboard includes various UI components, a chart to display price of categories, Google Maps integration, and functionality to fetch and display data from an API.
 
 ## Table of Contents
@@ -25,14 +25,13 @@ This is a Dashboard application built using React.js and Material UI. The dashbo
 
 Follow these instructions to set up and run the project on your local machine.
 
-### Create config.js file for environmental variables (inside src)
+### Environmental variables
 
-1. Create config.js file inside src (configuration directory):
+1. Create .env file
    ```sh
-   const env={
-   GOOGLE_MAPS_API_KEY:"YOUR_GOOGLE_MAPS_API_KEY",
-   API_URL:"URL to fetch fakestoreapi"}
-   export default env
+   REACT_APP_GOOGLE_MAPS_API_KEY=YOUR_GOOGLE_MAPS_API_KEY
+   REACT_APP_API_URL=URL to fetch fakestoreapi
+
 
 
 ### Installation
